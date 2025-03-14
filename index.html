@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Type Race</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Monkey Type Race</h1>
+        <div class="menu">
+            <div class="button-container">
+                <button class="start-btn" id="create-room">Create Room</button>
+                <button class="start-btn" id="join-room">Join Room</button>
+                <a href="game.html" class="start-btn">Practice Solo</a>
+            </div>
+            <div class="instructions">
+                <h2>How to Play</h2>
+                <p>Challenge your friends in this exciting typing race!</p>
+                <ul>
+                    <li>Create a room or join an existing one</li>
+                    <li>Share the room code with your friends</li>
+                    <li>Type the shown text as quickly and accurately as possible</li>
+                    <li>Race against your friends in real-time</li>
+                    <li>See your WPM and accuracy stats live</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Join Room Modal -->
+    <div class="modal" id="join-modal">
+        <h2>Join Room</h2>
+        <input type="text" id="room-code-input" placeholder="Enter room code">
+        <input type="text" id="player-name-input" placeholder="Enter your name">
+        <button class="btn" id="join-submit">Join</button>
+    </div>
+
+    <!-- Create Room Modal -->
+    <div class="modal" id="create-modal">
+        <h2>Create Room</h2>
+        <input type="text" id="create-name-input" placeholder="Enter your name">
+        <button class="btn" id="create-submit">Create</button>
+    </div>
+
+    <div class="modal-overlay"></div>
+
+    <script src="multiplayer.js"></script>
+</body>
+</html> 

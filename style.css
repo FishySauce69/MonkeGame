@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600&display=swap');
+
+:root {
+    --neon-primary: #00ff88;
+    --neon-secondary: #0ff;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: rgba(255, 255, 255, 0.05);
+    --text-primary: #ffffff;
+    --text-secondary: rgba(255, 255, 255, 0.7);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #1a1a2e 100%);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 255, 136, 0.1), transparent 70%);
+    pointer-events: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    padding: 2.5rem;
+    background: var(--bg-secondary);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+h1 {
+    text-align: center;
+    color: var(--neon-primary);
+    margin-bottom: 2rem;
+    font-size: 3rem;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+    letter-spacing: 2px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.button-container {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.start-btn, .btn {
+    display: inline-block;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    background: rgba(0, 255, 136, 0.1);
+    color: var(--neon-primary);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid var(--neon-primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    overflow: hidden;
+}
+
+.start-btn:hover, .btn:hover {
+    background: var(--neon-primary);
+    color: var(--bg-primary);
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.4);
+}
+
+.instructions {
+    text-align: center;
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(5px);
+}
+
+.instructions h2 {
+    color: var(--neon-primary);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.instructions p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.instructions ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.instructions li {
+    margin: 1rem 0;
+    color: var(--text-secondary);
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.instructions li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--neon-primary);
+}
+
+/* Game Page Styles */
+.game-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.header {
+    text-align: center;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    margin-top: 1.5rem;
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+}
+
+.stats span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.stats span span {
+    color: var(--neon-primary);
+    font-weight: 600;
+}
+
+.text-display {
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 15px;
+    font-size: 1.3rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    min-height: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.input-field {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.3rem;
+    background: var(--bg-secondary);
+    border: 1px solid var(--neon-primary);
+    border-radius: 10px;
+    color: var(--text-primary);
+    resize: none;
+    height: 120px;
+    transition: all 0.3s ease;
+}
+
+.input-field:focus {
+    outline: none;
+    border-color: var(--neon-secondary);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+/* Multiplayer Styles */
+.players {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    gap: 1rem;
+}
+
+.player-card {
+    background: var(--bg-secondary);
+    padding: 1rem;
+    border-radius: 10px;
+    min-width: 200px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.player-name {
+    color: var(--neon-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.player-progress {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: var(--neon-primary);
+    transition: width 0.3s ease;
+}
+
+.room-code {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--bg-secondary);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: var(--neon-primary);
+    border: 1px solid var(--neon-primary);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 1000;
+}
+
+.modal.active {
+    display: block;
+}
+
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(3px);
+    z-index: 999;
+}
+
+.modal-overlay.active {
+    display: block;
+} 
