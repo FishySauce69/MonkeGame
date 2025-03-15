@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monkey Type Race - Game</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.2/socket.io.min.js"></script>
+</head>
+<body>
+    <div class="container game-container">
+        <div class="room-code" id="room-code"></div>
+        <div class="header">
+            <h1>Monkey Type Race</h1>
+            <div class="stats">
+                <span class="wpm">WPM: <span id="wpm">0</span></span>
+                <span class="accuracy">Accuracy: <span id="accuracy">100%</span></span>
+                <span class="time">Time: <span id="time">60</span>s</span>
+            </div>
+        </div>
+
+        <div class="players" id="players-container">
+            <!-- Player cards will be added dynamically -->
+        </div>
+        
+        <div class="game-area">
+            <div id="text-display" class="text-display"></div>
+            <textarea id="input-field" class="input-field" placeholder="Wait for all players..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"></textarea>
+        </div>
+
+        <div class="controls">
+            <button id="ready-btn" class="btn">Ready</button>
+            <button id="restart-btn" class="btn" style="display: none;">Restart</button>
+            <a href="index.html" class="btn">Leave Room</a>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="multiplayer.js"></script>
+</body>
+</html> 
