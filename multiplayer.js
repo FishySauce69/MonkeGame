@@ -1,7 +1,9 @@
 // Connect to the Socket.IO server
-const socket = io(window.location.hostname === 'localhost' 
+const socket = io(window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
     ? 'http://localhost:3000'
-    : window.location.origin);
+    : window.location.origin, {
+        path: '/socket.io'
+    });
 
 // DOM Elements
 const createRoomBtn = document.getElementById('create-room');
